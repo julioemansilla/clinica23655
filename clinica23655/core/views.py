@@ -7,6 +7,12 @@ from django.shortcuts import render
 def index(request):
     return render ( request, 'core/index.html' )
 
+def index2(request,nombre_usuario):
+    context ={
+        'nombre_usuario':nombre_usuario,
+    }
+    return render ( request, 'core/index.html',context )
+
 def especialidades_listado(request):
     return render (request, 'core/especialidades.html')
 

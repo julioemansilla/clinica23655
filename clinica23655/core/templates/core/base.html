@@ -28,7 +28,7 @@
         </div>
 
         <div class="row nav link logo">
-            <div class="col">Nombre clinica</div>
+            <div class="col">{% block usuario %} {% endblock %} </div>
 
         </div>
         <div class="row">
@@ -50,6 +50,7 @@
                 <a href="{% url 'turnos_dia' %}"class="link">TURNOS</a>
             </div>
         </div>
+
 
         <div class="row">Espacio a Completar {% block main %} {% endblock %}
 
