@@ -1,0 +1,60 @@
+<html>
+<head>
+    <title>AGENDAR CONSULTA</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        form {
+            max-width: 300px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        select, input[type="time"], input[type="date"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            color: #fff;
+            background-color: #007BFF;
+        }
+    </style>
+</head>
+<body>
+    <form method="post">
+        <label for="medico">Medico:</label><br>
+        <select id="medico" name="medico">
+            <option value="1">Dr. Jose Lopez</option>
+            <option value="2">Dra. Maria Nora García</option>
+            <option value="3">Dr. Carlos Rodríguez</option>
+            <option value="4">Dra. Ana Gimenez</option>
+        </select><br>
+        <label for="horario">Horario:</label><br>
+        <input type="time" id="horario" name="horario"><br>
+        <label for="fecha">Fecha:</label><br>
+        <input type="date" id="fecha" name="fecha"><br>
+        <input type="submit" value="Submit">
+    </form>
+
+</body>
+</html>
