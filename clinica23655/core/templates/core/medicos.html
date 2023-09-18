@@ -1,4 +1,24 @@
 {% extends 'core/base.html' %}
 {% block title %} Medicos {% endblock %}
 {% block section_title %} Medicos {% endblock %}
-{% block main %} {% endblock %}
+{% block main %}    
+<div class="content d-flex gap-4 my-3">
+    {% for medico in medicos %}
+    <div class="card shadow p-3 mb-5 bg-body-tertiary rounded" style="width: 18rem;">
+        <img src="https://cdn.icon-icons.com/icons2/944/PNG/512/medical-59_icon-icons.com_73933.png" alt="Medico" class="card-img-top">
+        <div class="card-body">
+            <p class="card-title">               
+                <strong>{{medico.nombre|upper}} {{medico.apellido|upper}}</strong>
+            </p>
+            <p class="card-text">
+                Rubro: <strong>{{medico.rubro}}</strong>
+            </p>
+            <p class="card-text">
+                Matricula: <strong>{{medico.matricula}}</strong>
+            </p>
+        </div>
+        <a href="{% url 'datos_personales_medico' medico.matricula %}"> <strong>+</strong>info </a>
+    </div>
+    {% endfor %}
+</div> 
+{% endblock %}
