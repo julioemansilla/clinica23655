@@ -1,0 +1,25 @@
+/* Estilos CSS existentes */
+
+.especialidades {
+    max-width: 400px; /* Ajusta el ancho máximo según tus preferencias */
+    margin: 0 auto;
+}
+
+.especialidad ul {
+    display: none;
+    list-style: none;
+    padding: 0;
+}
+
+.toggle {
+    cursor: pointer;
+}
+
+.toggle::after {
+    content: "+";
+    float: right;
+}
+
+.toggle.active::after {
+    content: "-";
+}
