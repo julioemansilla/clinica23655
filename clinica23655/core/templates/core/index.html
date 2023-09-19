@@ -1,5 +1,9 @@
 <!-- Se hereda la estructura html de base.html -->
 {% extends 'core/base.html' %}
+{% load static %}
+{% block css_externo %} 
+<link rel="stylesheet" href="{% static 'core/css/index.css' %}">
+{% endblock %}
 <!-- Etiqueta tags para completar con lo que corresponde cada pagina -->
 {% block title %}Clinica Home {% endblock %}
 {% block section_title %} Home {% endblock %}
@@ -7,12 +11,12 @@
 
 <!-- Seccion main : Texto de relleno -->
 {% block main %}
-<div class="row">
+<div class="row border">
     <div class="col-4">
         <div>
             {% block barraLateral %}
-            <aside>
-                <ul>
+            <aside class="alineamiento">
+                <ul >
                     <li>Conoce a ...</li>
                     <li>Quiero ser Socio</li>
                     <li>Informacion al Socio</li>

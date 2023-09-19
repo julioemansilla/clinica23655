@@ -1,0 +1,10 @@
+.border{
+    margin: 10px 5px 5px 5px;
+    background-color: beige;
+}
+.alineamiento{
+    display: flex;
+    justify-content: center;
+}
+    
+    
