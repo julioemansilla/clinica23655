@@ -1,0 +1,21 @@
+<!-- Se hereda la estructura html de base.html -->
+{% extends 'core/base.html' %}
+{% load static %}
+{% block css_externo %} 
+<link rel="stylesheet" href="{% static 'core/css/index.css' %}">
+<link rel="stylesheet" href="{% static 'core/css/contacto.css' %}">
+{% endblock %}
+<!-- Etiqueta tags para completar con lo que corresponde cada pagina -->
+{% block title %}Contacto {% endblock %}
+{% block section_title %} Contacto {% endblock %}
+
+{% block main%}
+    <h3>Comunicate con Nosotros</h3>
+
+    <form action="{% url 'contacto' %}" method="POST">
+        {% csrf_token %}
+        {{contacto_form}}
+        <input type="submit" value="Enviar">
+    </form>
+
+{%  endblock %}

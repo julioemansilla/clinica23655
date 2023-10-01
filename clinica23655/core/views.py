@@ -1,11 +1,20 @@
 from django.http import HttpResponse
 import datetime
 from django.shortcuts import render
+from .forms import ContactoForms
 
 
 
 def index(request):
     return render ( request, 'core/index.html' )
+
+def contacto(request):
+    formulario = ContactoForms()
+
+    context = {
+        'contacto_form': formulario 
+    }
+    return render(request, 'core/contacto.html', context)
 
 def index2(request,nombre_usuario):
     context ={
@@ -109,3 +118,4 @@ def datos_personales_medico(request,matricula):
             medico_encontrado = medico
             break
     return render(request,'core/datos_personales_medico.html',{'medico':medico_encontrado})
+
