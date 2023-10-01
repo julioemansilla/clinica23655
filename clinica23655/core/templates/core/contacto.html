@@ -6,11 +6,11 @@
 <link rel="stylesheet" href="{% static 'core/css/contacto.css' %}">
 {% endblock %}
 <!-- Etiqueta tags para completar con lo que corresponde cada pagina -->
-{% block title %}Contacto {% endblock %}
-{% block section_title %} Contacto {% endblock %}
+{% block title %}Alta de Medicos {% endblock %}
+{% block section_title %} Alta de Medicos {% endblock %}
 
 {% block main%}
-    <h3>Comunicate con Nosotros</h3>
+    <h3>Carga de Medicos</h3>
 
     <form action="{% url 'contacto' %}" method="POST">
         {% csrf_token %}

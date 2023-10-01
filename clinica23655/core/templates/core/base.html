@@ -56,9 +56,21 @@
                 <a href="{% url 'contacto' %}"class="link">CONTACTANOS</a>
             </div>
         </div>
+        <div>
+            {% if messages %}
+                <ul class="messages">
+                    {% for message in messages %}
+                        <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{message}}</li>
+                    {% endfor%}
 
+                </ul>
+             {% endif %}
+        </div>
         <!-- Para completar lo que corresponde a cada seccion -->
-        <div class="row"> {% block main %} {% endblock %}
+        <div class="row"> 
+            {% block main %} 
+                
+            {% endblock %}
 
         </div>
 

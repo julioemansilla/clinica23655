@@ -6,3 +6,11 @@ form {
 input{
     max-width: 200px;
 }
+
+.color_fondo{
+    background-color: rgb(168, 168, 168);
+}
+
+.errorlist{
+    background-color: yellow;
+}

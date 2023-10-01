@@ -1,6 +1,8 @@
 from django.http import HttpResponse
 import datetime
-from django.shortcuts import render
+from django.contrib import messages
+from django.shortcuts import render , redirect
+from django.urls    import reverse
 from .forms import ContactoForms
 
 
@@ -9,7 +11,15 @@ def index(request):
     return render ( request, 'core/index.html' )
 
 def contacto(request):
-    formulario = ContactoForms()
+    if request.method  == 'POST':
+        formulario = ContactoForms(request.POST)
+
+        if formulario.is_valid():
+            messages.info(request,'Cargo de Medico/a con exito')
+            return redirect(reverse('index'))
+    else:
+        
+        formulario = ContactoForms()
 
     context = {
         'contacto_form': formulario 
