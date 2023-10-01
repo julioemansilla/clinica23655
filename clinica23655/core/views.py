@@ -15,7 +15,7 @@ def contacto(request):
         formulario = ContactoForms(request.POST)
 
         if formulario.is_valid():
-            messages.info(request,'Cargo de Medico/a con exito')
+            messages.info(request,'Registro de Medico/a con exito')
             return redirect(reverse('index'))
     else:
         

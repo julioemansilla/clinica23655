@@ -2,7 +2,7 @@
 {% extends 'core/base.html' %}
 {% load static %}
 {% block css_externo %} 
-<link rel="stylesheet" href="{% static 'core/css/index.css' %}">
+<link rel="stylesheet" href="{% static '/core/css/index.css' %}">
 {% endblock %}
 <!-- Etiqueta tags para completar con lo que corresponde cada pagina -->
 {% block title %}Clinica Home {% endblock %}
@@ -11,71 +11,61 @@
 
 <!-- Seccion main : Texto de relleno -->
 {% block main %}
-<div class="row border">
-    <div class="col-4">
+    <div class="confirmacion_alta">
+        {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    </div>
+
+    <div class="menu_index">
+        <div class="seccion_izquierda">
+            <ul class="listado">
+                <li>Quienes Somos</li>
+                <li>Nuestros Servicios</li>
+                <li>Nuestras Sucursales</li>
+                <li>Atencion al Socio</li>
+                <li>Contactos</li>
+            </ul>
+        </div>
+        <div class="seccion_derecha">
+            <h3>En la clinica "nombreClinica"...</h3>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Culpa ipsum aut animi deleniti inventore laudantium voluptatum magni, cum laboriosam velit totam, tempore placeat? Dolorem explicabo minus eveniet facilis perferendis minima.lorem
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Saepe ad, repellat quas mollitia nemo omnis eaque minus aperiam ipsa explicabo tenetur ipsum dolorem reprehenderit iste deserunt temporibus, adipisci sit eligendi?
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio recusandae, quo sit est vel doloremque distinctio officia dicta totam, ipsam veniam harum et neque, dignissimos delectus sequi expedita! Error, expedita.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae libero est odit quas qui mollitia asperiores, eius dolorum inventore unde, laudantium nesciunt animi, sunt modi sed? Eos illum quidem perspiciatis!   </p>
+        </div>
+    </div>
+    <section class="seccion_img">
         <div>
-            {% block barraLateral %}
-            <aside class="alineamiento">
-                <ul >
-                    <li>Conoce a ...</li>
-                    <li>Quiero ser Socio</li>
-                    <li>Informacion al Socio</li>
-                    <li>Gestiones Online</li>
-                    <li>Cartilal Medica</li>
-                    <li>Salud y Bienestar</li>
-                    <li>Novedades</li>
-                    <li>Contacto</li>
-                </ul>
-            </aside>
-            {% endblock %}
+            <img src="{% static 'core/img/sesiones-clinicas.jpg' %}" >
         </div>
-    </div>
-    <div class="col">
-        <h1>En "nombreClinica" somos... </h1>un servicio que Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-        Aperiam numquam, non similique, sequi itaque dolores enim nihil laudantium neque qui suscipit velit sunt harum
-        distinctio doloremque voluptates deserunt aut perspiciatis!Lorem Lorem ipsum dolor sit, amet consectetur
-        adipisicing elit. Fuga exercitationem consectetur culpa quas eius sapiente illo, aut dolorem, neque dicta magnam
-        deleniti? Nihil placeat harum necessitatibus, id consequatur repellat distinctio. Lorem ipsum dolor, sit amet
-        consectetur adipisicing elit. Quis ad voluptate aliquid ducimus, nostrum dignissimos provident cumque impedit
-        tempore adipisci eveniet excepturi qui atque ratione ut repellat quisquam. Nisi, ducimus.
-        Dolores non asperiores adipisci fuga blanditiis consectetur illum, at sunt tempore? Rerum perferendis sed cum
-        soluta aliquam! Sunt quasi culpa at placeat quo, voluptatibus, dignissimos, tenetur optio iusto totam nobis.
-        Repudiandae maiores enim quidem officia deserunt cum reprehenderit ducimus ab veritatis ut vero itaque pariatur,
-        odio molestiae consectetur fugit dolorem voluptate voluptatum temporibus dolores illo minus. Praesentium impedit
-        illo quia!
-        Ipsum aliquam mollitia, nesciunt qui unde praesentium, sed facere autem adipisci soluta odit necessitatibus,
-        animi ex officiis assumenda magni nemo porro consectetur repudiandae! Asperiores reprehenderit eos suscipit,
-        modi ipsa maiores!
-        Molestias, voluptas atque? Maxime voluptatibus tenetur sint sed vitae obcaecati harum beatae. Aliquid, sint
-        fugiat. Provident eligendi delectus quos et atque eos consequatur debitis consectetur quia, magni tenetur beatae
-        id.
-    </div>
-</div>
-    <div class="row">
-        <div class="col">
-            <img src="{% static 'core/img/sesiones-clinicas.jpg' %}" class="img-fluid" alt="...">            
+        <div>
+            <img src="{% static 'core/img/sesiones-clinicas.jpg' %}" >
         </div>
-        
-        <div class="col">
-            <img src="{% static 'core/img/sesiones-clinicas.jpg' %}" class="img-fluid" alt="">
+        <div>
+            <img src="{% static 'core/img/sala.jpg' %}" >
         </div>
-        <div class="col">
-            <img src="{% static 'core/img/sala.jpg' %}" class="img-fluid" alt="...">
-        </div>
-        <div class="col">
-            <img src="{% static 'core/img/sala.jpg' %}" class="img-fluid" alt="...">
-        </div>
-        <div class="col">
-            <img src="{% static 'core/img/sala.jpg' %}" class="img-fluid" alt="...">
-        </div>
-        <div class="col">
-            <img src="{% static 'core/img/sala.jpg' %}" class="img-fluid" alt="...">
-        </div>
-    </div>
+       
+    </section>
+
+
+
 {% endblock %}
 
 
 
 
-</div>
-</div>
+
+
+
+
+
+
+   
+
+
+

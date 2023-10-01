@@ -2,15 +2,17 @@
 {% extends 'core/base.html' %}
 {% load static %}
 {% block css_externo %} 
-<link rel="stylesheet" href="{% static 'core/css/index.css' %}">
 <link rel="stylesheet" href="{% static 'core/css/contacto.css' %}">
 {% endblock %}
+
 <!-- Etiqueta tags para completar con lo que corresponde cada pagina -->
 {% block title %}Alta de Medicos {% endblock %}
 {% block section_title %} Alta de Medicos {% endblock %}
 
-{% block main%}
-    <h3>Carga de Medicos</h3>
+{% block main %}
+    <div class="centrado">
+        <h3>Carga de Medicos</h3>
+    </div>
 
     <form action="{% url 'contacto' %}" method="POST">
         {% csrf_token %}

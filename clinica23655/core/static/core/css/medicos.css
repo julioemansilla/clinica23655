@@ -1,0 +1,10 @@
+.menu_medicos{
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    margin: 5% 10%;
+    height: 45rem;
+    /* background-color: red; */
+    justify-content: space-around;
+    align-items: center;
+}

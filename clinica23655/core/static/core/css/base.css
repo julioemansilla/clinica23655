@@ -14,3 +14,59 @@
 .logo{
     background-color: rgb(40, 145, 216);
 }
+.telefono-fondo{
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    justify-content: space-evenly;
+    margin: 0 10%;
+}
+
+.bienvenida{
+    display: flex;
+    justify-content: center;
+    color: white;
+    background-color: rgb(31, 104, 173);
+    width: 80%;
+    margin: 0 10%;
+}
+
+.lugar_seccion{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 80%;
+    margin: 0 10%;
+}
+   
+.barra_navegacion{
+    justify-content: space-around;
+    align-items: center;
+    background-color: black;
+    color: white;
+    width: 80%;
+    margin: 0 10%;
+}
+   
+    
+.barra_navegacion ul{
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    justify-content: space-around;
+}
+
+
+footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 80%;
+    margin: 0 10%;
+    background-color: grey;
+    color: white;
+}
+  
+    

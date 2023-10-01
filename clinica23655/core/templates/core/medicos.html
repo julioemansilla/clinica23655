@@ -1,8 +1,13 @@
 {% extends 'core/base.html' %}
+{% load static %}
+{% block css_externo %} 
+<link rel="stylesheet" href="{% static 'core/css/medicos.css' %}">
+{% endblock %}
+
 {% block title %} Medicos {% endblock %}
 {% block section_title %} Medicos {% endblock %}
 {% block main %}    
-<div class="content d-flex gap-4 my-3">
+<div class="content d-flex gap-4 my-3 menu_medicos">
     {% for medico in medicos %}
     <div class="card shadow p-3 mb-5 bg-body-tertiary rounded" style="width: 18rem;">
         <img src="https://cdn.icon-icons.com/icons2/944/PNG/512/medical-59_icon-icons.com_73933.png" alt="Medico" class="card-img-top">
