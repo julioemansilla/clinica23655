@@ -77,8 +77,13 @@ WSGI_APPLICATION = 'clinica23655.wsgi.application'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
+<<<<<<< HEAD
     "default": {
         "ENGINE": "django.db.backends.postgresql",
+=======
+    'default': {
+       "ENGINE": "django.db.backends.postgresql",
+>>>>>>> 3ab8a09cfc85e1db185c7b2100b380c9c8d1f7eb
         "NAME": "cac_2023_23655",
         "USER": "postgres",
         "PASSWORD": "1234",
