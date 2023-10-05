@@ -14,7 +14,7 @@
         <h3>Carga de Medicos</h3>
     </div>
 
-    <form action="{% url 'contacto' %}" method="POST">
+    <form action="{% url 'alta_medico' %}" method="POST">
         {% csrf_token %}
         {{contacto_form}}
         <input type="submit" value="Enviar">

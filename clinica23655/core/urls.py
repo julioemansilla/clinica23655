@@ -9,5 +9,5 @@ urlpatterns = [
     path('medicos/', medicos, name='medicos'),
     path('datos_personales_medico/<int:matricula>', datos_personales_medico, name="datos_personales_medico"),
     path('nuevo_turno/',nuevo_turno, name="nuevo_turno"),
-    path('contacto', contacto, name = 'contacto')
+    path('alta', alta_medico, name = 'alta_medico')
 ]

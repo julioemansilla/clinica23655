@@ -10,7 +10,7 @@ from .forms import ContactoForms
 def index(request):
     return render ( request, 'core/index.html' )
 
-def contacto(request):
+def alta_medico(request):
     if request.method  == 'POST':
         formulario = ContactoForms(request.POST)
 
