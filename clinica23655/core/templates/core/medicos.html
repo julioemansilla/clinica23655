@@ -2,11 +2,17 @@
 {% load static %}
 {% block css_externo %} 
 <link rel="stylesheet" href="{% static 'core/css/medicos.css' %}">
+<link rel="stylesheet" href="{% static 'core/css/alta_medico.css' %}">
 {% endblock %}
 
 {% block title %} Medicos {% endblock %}
 {% block section_title %} Medicos {% endblock %}
-{% block main %}    
+{% block main %}  
+<div class="alta_medico">
+    <ul>
+        <li><h3><a href="{% url 'contacto' %}">ALTA MEDICO</a></h3></li>
+    </ul>
+</div>  
 <div class="content d-flex gap-4 my-3 menu_medicos">
     {% for medico in medicos %}
     <div class="card shadow p-3 mb-5 bg-body-tertiary rounded" style="width: 18rem;">

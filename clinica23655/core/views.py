@@ -24,7 +24,7 @@ def contacto(request):
     context = {
         'contacto_form': formulario 
     }
-    return render(request, 'core/contacto.html', context)
+    return render(request, 'core/alta_medico.html', context)
 
 def index2(request,nombre_usuario):
     context ={
