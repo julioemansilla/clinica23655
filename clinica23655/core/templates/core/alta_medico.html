@@ -16,7 +16,7 @@
 
     <form action="{% url 'alta_medico' %}" method="POST">
         {% csrf_token %}
-        {{contacto_form}}
+        {{form.as_table}}
         <input type="submit" value="Enviar">
     </form>
 

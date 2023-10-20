@@ -3,12 +3,15 @@ import datetime
 from django.contrib import messages
 from django.shortcuts import render , redirect
 from django.urls    import reverse
-from .forms import ContactoForms
 
+from core.models import Doctor, Especialidad
+from .forms import ContactoForms, AltaDoctor
 
-
-def index(request):
-    return render ( request, 'core/index.html' )
+from django.views.generic.base import TemplateView
+from django.views.generic.list import ListView
+from django.views.generic.edit import CreateView
+# def index(request):
+#     return render ( request,  )
 
 def alta_medico(request):
     if request.method  == 'POST':
@@ -24,6 +27,7 @@ def alta_medico(request):
     context = {
         'contacto_form': formulario 
     }
+    
     return render(request, 'core/alta_medico.html', context)
 
 def index2(request,nombre_usuario):
@@ -128,4 +132,25 @@ def datos_personales_medico(request,matricula):
             medico_encontrado = medico
             break
     return render(request,'core/datos_personales_medico.html',{'medico':medico_encontrado})
+
+
+class Homeview(TemplateView):
+    template_name = 'core/index.html'
+
+
+class DoctorListView(ListView):
+    model = Doctor
+    context_object_name = 'medicos'
+    template_name = 'core/medicos.html'
+
+class AltaDoctor(CreateView):
+    model = Doctor
+    template_name = 'core/alta_medico.html'
+    form_class = AltaDoctor
+
+class EspecialidadesListView(ListView):
+    model = Especialidad
+    context_object_name = 'especialidades'
+    template_name = 'core/especialidades.html'
+    
 

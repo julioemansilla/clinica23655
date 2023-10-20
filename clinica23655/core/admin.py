@@ -1,3 +1,8 @@
 from django.contrib import admin
 
-# Register your models here.
+from core.models import *
+
+admin.site.register(Doctor)
+admin.site.register(Especialidad)
+admin.site.register(Paciente)
+admin.site.register(Turno)

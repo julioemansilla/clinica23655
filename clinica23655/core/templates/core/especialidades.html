@@ -13,23 +13,18 @@
 
 <div class="especialidades">
         <h1>Especialidades Médicas</h1>
-        <div class="especialidad">
-            <h2 class="toggle">Cardiología</h2>
-            <ul>
-                <li>Dr. Juan Pérez</li>
-                <li>Dra. Ana Gómez</li>
-                <li>Dr. Luis Torres</li>
-            </ul>
-        </div>
-        <div class="especialidad">
-            <h2 class="toggle">Dermatología</h2>
-            <ul>
-                <li>Dra. María González</li>
-                <li>Dr. Jorge Ramírez</li>
-                <li>Dra. Laura Rodríguez</li>
-            </ul>
-        </div>
         <!-- Agrega más especialidades aquí -->
+        {% for especialidad in especialidades %}
+            <div class="especialidad">
+                <h2 class="toggle">{{especialidad.nombre}}</h2>
+                <ul>
+                    <li>Dra. María González</li>
+                    <li>Dr. Jorge Ramírez</li>
+                    <li>Dra. Laura Rodríguez</li>
+                </ul>
+            </div>
+        {% endfor %}
+        
     </div>
     
 {% endblock %}

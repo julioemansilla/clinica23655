@@ -1,6 +1,8 @@
 from django import forms
 from django.core.exceptions import ValidationError
 
+from core.models import Doctor
+
 class ContactoForms(forms.Form):
     nombre = forms.CharField(label='Nombre', widget=forms.TextInput(attrs={'class':'color_fondo'}),required=True)
     apellido = forms.CharField(label='Apellido',required=True)
@@ -15,3 +17,10 @@ class ContactoForms(forms.Form):
             raise ValidationError('El doctor/a ingresado no puede tener menos de 18 años')
         
         return self.cleaned_data['edad']
+
+
+class AltaDoctor(forms.ModelForm):
+    class Meta:
+        model = Doctor
+        fields = "__all__"
+        
