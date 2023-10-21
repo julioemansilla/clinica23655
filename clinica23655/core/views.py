@@ -4,8 +4,8 @@ from django.contrib import messages
 from django.shortcuts import render , redirect
 from django.urls    import reverse
 
-from core.models import Doctor, Especialidad
-from .forms import ContactoForms, AltaDoctor
+from core.models import Doctor, Especialidad, Paciente, Turno
+from .forms import ContactoForms, AltaDoctor, AltaTurno, AltaPaciente
 
 from django.views.generic.base import TemplateView
 from django.views.generic.list import ListView
@@ -153,4 +153,22 @@ class EspecialidadesListView(ListView):
     context_object_name = 'especialidades'
     template_name = 'core/especialidades.html'
     
+class TurnosListView(ListView):
+    model = Turno
+    context_object_name = 'turnos'
+    template_name = 'core/turnos.html'
 
+class AltaTurno(CreateView):
+    model = Turno
+    template_name = 'core/alta_turno.html'
+    form_class = AltaTurno
+
+class PacienteListView(ListView):
+    model = Paciente
+    context_object_name = 'pacientes'
+    template_name = 'core/pacientes.html'
+
+class AltaPaciente(CreateView):
+    model = Paciente
+    template_name = 'core/alta_paciente.html'
+    form_class = AltaPaciente

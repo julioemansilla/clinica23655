@@ -1,0 +1,24 @@
+<!-- Se hereda la estructura html de base.html -->
+{% extends 'core/base.html' %}
+{% load static %}
+{% block css_externo %} 
+<link rel="stylesheet" href="{% static 'core/css/alta_medico.css' %}">
+
+{% endblock %}
+
+<!-- Etiqueta tags para completar con lo que corresponde cada pagina -->
+{% block title %} Alta de pacientes {% endblock %}
+{% block section_title %} Alta de pacientes {% endblock %}
+
+{% block main %}
+    <div class="centrado">
+        <h3>Registrar turno</h3>
+    </div>
+
+    <form action="{% url 'alta_paciente' %}" method="POST">
+        {% csrf_token %}
+        {{form.as_table}}
+        <input type="submit" value="Enviar">
+    </form>
+
+{%  endblock %}

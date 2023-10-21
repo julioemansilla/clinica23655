@@ -1,0 +1,63 @@
+<!-- Se hereda la estructura html de base.html -->
+{% extends 'core/base.html' %}
+{% load static %}
+{% block css_externo %} 
+<link rel="stylesheet" href="{% static 'core/css/alta_medico.css' %}">
+{% comment %} <style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f0f0f0;
+    }
+
+    form {
+        max-width: 300px;
+        margin: 50px auto;
+        padding: 20px;
+        background-color: #fff;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    label {
+        display: block;
+        margin-bottom: 10px;
+    }
+    
+    select, input[type="time"], input[type="date"] {
+        box-sizing: border-box;
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+    }
+
+    input[type="submit"] {
+        width: 100%;
+        padding: 10px;
+        border-radius: 5px;
+        border: none;
+        color: #fff;
+        background-color: #007BFF;
+    }
+</style>
+{% endcomment %}
+{% endblock %}
+
+<!-- Etiqueta tags para completar con lo que corresponde cada pagina -->
+{% block title %} Registrar turno {% endblock %}
+{% block section_title %} Registrar turno {% endblock %}
+
+{% block main %}
+    <div class="centrado">
+        <h3>Registrar turno</h3>
+    </div>
+
+    <form action="{% url 'alta_turno' %}" method="POST">
+        {% csrf_token %}
+        {{form.as_table}}
+        <input type="submit" value="Enviar">
+    </form>
+
+{%  endblock %}

@@ -10,17 +10,17 @@
 {% block main %}  
 <div class="alta_medico">
     <ul>
-        <li><h3><a href="{% url 'alta_turno' %}">Registrar turno</a></h3></li>
+        <li><h3><a href="{% url 'alta_paciente' %}">Registrar paciente</a></h3></li>
     </ul>
 </div>
 <div class="content d-flex gap-4 my-3 menu_medicos">
-    {% if turnos.count == 0 %}
+    {% if pacientes.count == 0 %}
         <p>
-            No hay turnos registrados
+            No hay pacientes registrados
         </p>
     {% else %}
-        {% for turno in turnos %}
-
+        {% for paciente in pacientes %}
+            {{paciente}}
         {% endfor %}
     {% endif %}
         

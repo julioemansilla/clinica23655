@@ -1,7 +1,7 @@
 from django import forms
 from django.core.exceptions import ValidationError
 
-from core.models import Doctor
+from core.models import *
 
 class ContactoForms(forms.Form):
     nombre = forms.CharField(label='Nombre', widget=forms.TextInput(attrs={'class':'color_fondo'}),required=True)
@@ -23,4 +23,13 @@ class AltaDoctor(forms.ModelForm):
     class Meta:
         model = Doctor
         fields = "__all__"
-        
+
+class AltaPaciente(forms.ModelForm):
+    class Meta:
+        model = Paciente 
+        fields = "__all__"
+
+class AltaTurno(forms.ModelForm):
+    class Meta: 
+        model = Turno
+        fields = "__all__"
