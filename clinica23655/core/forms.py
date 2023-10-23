@@ -33,3 +33,8 @@ class AltaTurno(forms.ModelForm):
     class Meta: 
         model = Turno
         fields = "__all__"
+
+class AltaEspecialidad(forms.ModelForm):
+    class Meta:
+        model = Especialidad 
+        fields = "__all__"

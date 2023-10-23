@@ -5,7 +5,7 @@ from django.shortcuts import render , redirect
 from django.urls    import reverse
 
 from core.models import Doctor, Especialidad, Paciente, Turno
-from .forms import ContactoForms, AltaDoctor, AltaTurno, AltaPaciente
+from .forms import ContactoForms, AltaDoctor, AltaTurno, AltaPaciente, AltaEspecialidad
 
 from django.views.generic.base import TemplateView
 from django.views.generic.list import ListView
@@ -172,3 +172,8 @@ class AltaPaciente(CreateView):
     model = Paciente
     template_name = 'core/alta_paciente.html'
     form_class = AltaPaciente
+
+class AltaEspecialidad(CreateView):
+    model = Especialidad
+    template_name = 'core/alta_especialidad.html'
+    form_class = AltaEspecialidad

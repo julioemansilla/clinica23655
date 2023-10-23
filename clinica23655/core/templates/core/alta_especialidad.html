@@ -1,0 +1,23 @@
+<!-- Se hereda la estructura html de base.html -->
+{% extends 'core/base.html' %}
+{% load static %}
+{% block css_externo %} 
+<link rel="stylesheet" href="{% static 'core/css/especialidad.css' %}">
+{% endblock %}
+
+<!-- Etiqueta tags para completar con lo que corresponde cada pagina -->
+{% block title %}Alta de Medicos {% endblock %}
+{% block section_title %} Alta de Especialidad {% endblock %}
+
+{% block main %}
+    <div class="centrado">
+        <h3>Carga de Especialidades</h3>
+    </div>
+
+    <form action="{% url 'alta_especialidad' %}" method="POST">
+        {% csrf_token %}
+        {{form.as_table}}
+        <input type="submit" value="Enviar">
+    </form>
+
+{%  endblock %}

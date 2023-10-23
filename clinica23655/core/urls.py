@@ -14,4 +14,5 @@ urlpatterns = [
     path('alta_turno/',AltaTurno.as_view(), name='alta_turno'),
     path('alta_medico', AltaDoctor.as_view(), name = 'alta_medico'),
     path('alta_paciente', AltaPaciente.as_view(), name='alta_paciente'),
+    path('alta_especialidad', AltaEspecialidad.as_view(), name = 'alta_especialidad'),
 ]
