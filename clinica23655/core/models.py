@@ -18,16 +18,24 @@ class Especialidad(models.Model):
 
     def __str__(self):
         return self.nombre
+    
+    
+    def get_absolute_url(self):
+        return 'especialidades'
 
 class Doctor(Persona):
     matricula = models.CharField(max_length=50,unique=True)
     especialidades = models.ManyToManyField(Especialidad)
 
     def get_absolute_url(self):
-        return 'medicos.html'
+        return 'medicos'
 
 class Paciente(Persona):
     historia_clinica = models.TextField()
+
+    def get_absolute_url(self):
+        return 'pacientes'
+
 
 class Turno(models.Model):
     doctor = models.ForeignKey(Doctor, on_delete=models.CASCADE)
@@ -35,3 +43,5 @@ class Turno(models.Model):
     hora = models.TimeField(auto_now=False, auto_now_add=False)
     fecha = models.DateField(auto_now=False, auto_now_add=False)
 
+    def get_absolute_url(self):
+        return 'turnos'
