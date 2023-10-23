@@ -35,8 +35,13 @@
                 <p class="card-title">               
                     <strong>{{medico.nombre|upper}} {{medico.apellido|upper}}</strong>
                 </p>
-                <p class="card-text">
-                    Especialidad: <strong>{{medico.especialidades}}</strong>
+                <p class="card-text">                    
+                    Especialidad: <strong>{{medico.doctor_especialidades}}
+                        <ul>
+                            {% for especialidad in medico.especialidades.all %}
+                                <li>{{ especialidad.nombre }}</li>
+                            {% endfor %}
+                        </ul>
                 </p>
                 <p class="card-text">
                     Matricula: <strong>{{medico.matricula}}</strong>
