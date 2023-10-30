@@ -29,12 +29,18 @@ class Doctor(Persona):
 
     def get_absolute_url(self):
         return 'medicos'
+    
+    def __str__(self):
+        return f'{self.nombre}, {self.apellido}'
 
 class Paciente(Persona):
     historia_clinica = models.TextField()
 
     def get_absolute_url(self):
         return 'pacientes'
+    
+    def __str__(self):
+        return  f'{self.nombre}, {self.apellido}'
 
 
 class Turno(models.Model):
@@ -45,3 +51,6 @@ class Turno(models.Model):
 
     def get_absolute_url(self):
         return 'turnos'
+    
+    def __str__(self):
+        return f'Doctor: {self.doctor} - Paciente: {self.Paciente} Fecha y Hora del Turno: {self.fecha} - {self.hora}'
