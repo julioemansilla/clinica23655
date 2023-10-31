@@ -53,4 +53,4 @@ class Turno(models.Model):
         return 'turnos'
     
     def __str__(self):
-        return f'Doctor: {self.doctor} - Paciente: {self.Paciente} Fecha y Hora del Turno: {self.fecha} - {self.hora}'
+        return f'Doctor: {self.doctor} - Paciente: {self.Paciente}-- Fecha y Hora del Turno: {self.fecha} - {self.hora}'
