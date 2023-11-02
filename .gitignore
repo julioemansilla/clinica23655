@@ -127,6 +127,8 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+venvclinica/
+.venvclinica
 
 # Spyder project settings
 .spyderproject
