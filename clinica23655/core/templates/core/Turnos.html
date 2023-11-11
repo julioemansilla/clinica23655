@@ -13,16 +13,42 @@
         <li><h3><a href="{% url 'alta_turno' %}">Registrar turno</a></h3></li>
     </ul>
 </div>
-<div class="content d-flex gap-4 my-3 menu_medicos">
+<!-- <div class="content d-flex gap-4 my-3 menu_medicos">
     {% if turnos.count == 0 %}
         <p>
             No hay turnos registrados
         </p>
     {% else %}
-        {% for turno in turnos %}
-
-        {% endfor %}
+    
     {% endif %}
+</div>  -->
+<div>
+    <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="En mantenimiento" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Buscador</button>
+    </form>
+</div>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Doctor</th>
+            <th scope="col">Paciente</th>
+            <th scope="col">Hora</th>
+            <th scope="col">Fecha</th>
+        </tr>
+    </thead>
+    {% for turno in turnos %}
+    <tbody>
+        <tr>
+            <th scope="row">{{turno.doctor}}</th>
+            <td>{{turno.Paciente}}</td>
+            <td>{{turno.hora}}</td>
+            <td>{{turno.fecha}}</td>
+        </tr>
         
-</div> 
+        {% endfor %}
+    </tbody>
+  </table>
+        
 {% endblock %}

@@ -13,7 +13,10 @@
         <li><h3><a href="{% url 'alta_paciente' %}">Registrar paciente</a></h3></li>
     </ul>
 </div>
-<div class="content d-flex gap-4 my-3 menu_medicos">
+
+
+<!-- <div class="content d-flex gap-4 my-3 menu_medicos">
+    
     {% if pacientes.count == 0 %}
         <p>
             No hay pacientes registrados
@@ -24,5 +27,35 @@
         {% endfor %}
     {% endif %}
         
-</div> 
+</div>  -->
+<div>
+    <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="En mantenimiento" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Buscador</button>
+    </form>
+</div>
+
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">DNI</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Apellido</th>
+            <th scope="col">Email</th>
+        </tr>
+    </thead>
+    {% for paciente in pacientes %}
+    <tbody>
+      <tr>
+        <th scope="row">{{paciente.dni}}</th>
+        <td>{{paciente.nombre}}</td>
+        <td>{{paciente.apellido}}</td>
+        <td>{{paciente.email}}</td>
+      </tr>
+      
+    </tbody>
+    {% endfor %}
+  </table>
 {% endblock %}
