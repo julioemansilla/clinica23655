@@ -1,4 +1,10 @@
 from django.db import models
+from django.contrib.auth.models import User
+
+
+class Persona2(User):
+    class Metal:
+        proxy = True 
 
 class Persona(models.Model):
     nombre = models.CharField(max_length=100)
