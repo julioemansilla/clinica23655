@@ -1,6 +1,5 @@
 from django.urls import path
 from core.views import * 
-from turno.views import nuevo_turno
 
 urlpatterns = [
     path('', Homeview.as_view(), name='index'),

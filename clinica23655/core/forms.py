@@ -25,7 +25,7 @@ class AltaDoctor(forms.ModelForm):
         fields = "__all__"
 
 class AltaPaciente(forms.ModelForm):
-    class Meta:
+    class Meta: 
         model = Paciente 
         fields = "__all__"
 
@@ -33,6 +33,10 @@ class AltaTurno(forms.ModelForm):
     class Meta: 
         model = Turno
         fields = "__all__"
+        widgets = {
+            "hora": forms.TimeInput(format="%H:%M", attrs={"type":"time"}),
+            "fecha":forms.DateInput(format='%d/%m/%Y', attrs={"type":"date"})
+        }
 
 class AltaEspecialidad(forms.ModelForm):
     class Meta:

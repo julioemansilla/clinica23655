@@ -1,8 +1,8 @@
 from django.http import HttpResponse
 import datetime
 from django.contrib import messages
-from django.shortcuts import render , redirect
-from django.urls    import reverse
+from django.shortcuts import render
+from django.urls    import reverse, reverse_lazy
 
 from core.models import Doctor, Especialidad, Paciente, Turno
 from .forms import ContactoForms, AltaDoctor, AltaTurno, AltaPaciente, AltaEspecialidad
@@ -162,6 +162,7 @@ class AltaTurno(CreateView):
     model = Turno
     template_name = 'core/alta_turno.html'
     form_class = AltaTurno
+    success_url = reverse_lazy('turnos')
 
 class PacienteListView(ListView):
     model = Paciente
