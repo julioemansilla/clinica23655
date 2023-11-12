@@ -1,8 +1,14 @@
 from django.http import HttpResponse
 import datetime
 from django.contrib import messages
+
 from django.shortcuts import render
 from django.urls    import reverse, reverse_lazy
+
+
+from django.shortcuts import render , redirect
+from django.urls    import reverse
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 from core.models import Doctor, Especialidad, Paciente, Turno
 from .forms import ContactoForms, AltaDoctor, AltaTurno, AltaPaciente, AltaEspecialidad
@@ -12,6 +18,7 @@ from django.views.generic.list import ListView
 from django.views.generic.edit import CreateView
 # def index(request):
 #     return render ( request,  )
+
 
 def alta_medico(request):
     if request.method  == 'POST':
@@ -36,8 +43,10 @@ def index2(request,nombre_usuario):
     }
     return render ( request, 'core/index.html',context )
 
+
 def especialidades_listado(request):
     return render (request, 'core/especialidades.html')
+
 
 def turnos_dia(request):
     now=datetime.datetime.now()
@@ -45,6 +54,7 @@ def turnos_dia(request):
                         {{% block main %}}
                         <h1> Turnos del dia: {now}</h1>
                         {{% endblock %}}''')
+
 
 def medicos(request):
     medicos = [
@@ -72,6 +82,7 @@ def medicos(request):
     }
 
     return render(request, 'core/medicos.html',context=contexto)
+
 
 def datos_personales_medico(request,matricula):
     medicos = [
@@ -138,10 +149,12 @@ class Homeview(TemplateView):
     template_name = 'core/index.html'
 
 
-class DoctorListView(ListView):
+class DoctorListView(LoginRequiredMixin, ListView):
     model = Doctor
     context_object_name = 'medicos'
     template_name = 'core/medicos.html'
+
+
 
 class AltaDoctor(CreateView):
     model = Doctor
@@ -153,7 +166,7 @@ class EspecialidadesListView(ListView):
     context_object_name = 'especialidades'
     template_name = 'core/especialidades.html'
     
-class TurnosListView(ListView):
+class TurnosListView(LoginRequiredMixin, ListView):
     model = Turno
     context_object_name = 'turnos'
     template_name = 'core/turnos.html'
@@ -164,7 +177,8 @@ class AltaTurno(CreateView):
     form_class = AltaTurno
     success_url = reverse_lazy('turnos')
 
-class PacienteListView(ListView):
+
+class PacienteListView(LoginRequiredMixin, ListView):
     model = Paciente
     context_object_name = 'pacientes'
     template_name = 'core/pacientes.html'
