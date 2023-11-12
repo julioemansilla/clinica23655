@@ -13,7 +13,7 @@
         <li><h3><a href="{% url 'alta_medico' %}">ALTA MEDICO</a></h3></li>
     </ul>
 </div>  
-<div class="content d-flex gap-4 my-3 menu_medicos">
+<div class="content d-flex gap-4 my-3 ">
 
     {% if medicos.count == 0 %}
     <div class="alert alert-primary d-flex align-items-center" role="alert">
@@ -36,7 +36,7 @@
                     <strong>{{medico.nombre|upper}} {{medico.apellido|upper}}</strong>
                 </p>
                 <p class="card-text">                    
-                    Especialidad: <strong>{{medico.doctor_especialidades}}
+                    Especialidad: <strong>{{medico.doctor_especialidades}}</strong>
                         <ul>
                             {% for especialidad in medico.especialidades.all %}
                                 <li>{{ especialidad.nombre }}</li>
