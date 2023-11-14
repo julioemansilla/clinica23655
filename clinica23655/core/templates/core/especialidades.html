@@ -10,12 +10,13 @@
 
 
 {% block main %}
+{% if user.is_authenticated %}
 <div class="alta_medico">
     <ul>
         <li><h3><a href="{% url 'alta_especialidad' %}">ALTA ESPECIALIDAD</a></h3></li>
     </ul>
 </div>  
-
+{% endif %}
 <div class="especialidades">
         <h1>Especialidades Médicas</h1>
         <!-- Agrega más especialidades aquí -->

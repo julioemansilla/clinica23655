@@ -188,7 +188,7 @@ class AltaPaciente(CreateView):
     template_name = 'core/alta_paciente.html'
     form_class = AltaPaciente
 
-class AltaEspecialidad(CreateView):
+class AltaEspecialidad(LoginRequiredMixin,CreateView):
     model = Especialidad
     template_name = 'core/alta_especialidad.html'
     form_class = AltaEspecialidad
