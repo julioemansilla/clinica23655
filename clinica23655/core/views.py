@@ -4,7 +4,7 @@ from django.contrib import messages
 
 from django.shortcuts import render
 from django.urls    import reverse, reverse_lazy
-
+from django.db.models import Q
 
 from django.shortcuts import render , redirect
 from django.urls    import reverse
@@ -170,6 +170,8 @@ class TurnosListView(LoginRequiredMixin, ListView):
     model = Turno
     context_object_name = 'turnos'
     template_name = 'core/turnos.html'
+    
+
 
 class AltaTurno(CreateView):
     model = Turno
