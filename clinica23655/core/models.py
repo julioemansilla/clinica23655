@@ -19,7 +19,7 @@ class Persona(models.Model):
         abstract = True
 
 class Especialidad(models.Model):
-    nombre = models.CharField(max_length=70)
+    nombre = models.CharField(max_length=70,null=True)
     descripcion = models.CharField(max_length=150)
 
     def __str__(self):
@@ -54,7 +54,7 @@ class Turno(models.Model):
     Paciente = models.ForeignKey(Paciente, on_delete=models.CASCADE)
     hora = models.TimeField(auto_now=False, auto_now_add=False)
     fecha = models.DateField(auto_now=False, auto_now_add=False)
-
+    especialidad = models.ForeignKey(Especialidad, on_delete=models.CASCADE, null=True)
     def get_absolute_url(self):
         return 'turnos'
     

@@ -17,8 +17,9 @@ class PacienteAdmin(admin.ModelAdmin):
     search_fields = ['apellido', 'nombre','dni']
 
 class TurnoAdmin(admin.ModelAdmin):
-    list_display = ('id','doctor', 'Paciente', 'hora','fecha')
+    list_display = ('id','doctor', 'Paciente', 'hora','fecha','especialidad')
     ordering = ('id',)
+    list_editable = ('especialidad',)
     
     
 
