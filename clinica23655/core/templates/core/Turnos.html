@@ -36,6 +36,7 @@
             <th scope="col">Paciente</th>
             <th scope="col">Hora</th>
             <th scope="col">Fecha</th>
+            <th scope="col">Especialidad</th>
         </tr>
     </thead>
     {% for turno in turnos %}
@@ -45,6 +46,7 @@
             <td>{{turno.Paciente}}</td>
             <td>{{turno.hora}}</td>
             <td>{{turno.fecha}}</td>
+            <td>{{turno.especialidad}}</td>
         </tr>
         
         {% endfor %}
