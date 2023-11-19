@@ -42,45 +42,33 @@
 
 
 
-        <div class="col text-center  " style="background-image: url('{% static 'core/img/medicos.jpg' %}')">
+        <div class="col text-center max-wight:100% fondo">
+            <div>
+                <img src="{% static 'core/img/medicos.jpg' %}" height="300rem" width="100%" alt="medicos presentacion">
 
-            <div class=" font-weight-bold">
+                <div class=" font-weight-bold fondo ">
 
-                <h3>En la clinica "nombreClinica"...</h3>
-                <p class="font-weight-bold"><b>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Culpa ipsum aut
-                    animi deleniti inventore laudantium
-                    voluptatum magni, cum laboriosam velit totam, tempore placeat? Dolorem explicabo minus eveniet
-                    facilis
-                    perferendis minima.lorem
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Saepe ad, repellat quas mollitia nemo
-                    omnis eaque
-                    minus aperiam ipsa explicabo tenetur ipsum dolorem reprehenderit iste deserunt temporibus, adipisci
-                    sit
-                    eligendi?
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio recusandae, quo sit est vel doloremque
-                    distinctio officia dicta totam, ipsam veniam harum et neque, dignissimos delectus sequi expedita!
-                    Error,
-                    expedita.
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae libero est odit quas qui mollitia
-                    asperiores,
-                    eius dolorum inventore unde, laudantium nesciunt animi, sunt modi sed? Eos illum quidem
-                    perspiciatis!</b> </p>
+                    <h3>En "Clinica Privada Django"...</h3>
+                    <p class="font-weight-bold"><b>Somos una institución dedicada a proveer servicios médicos y
+                            hospitalarios de excelente calidad, mejorando el nivel de salud de las personas, dentro de
+                            un marco de ética y compromiso con la sociedad</b> </p>
+                </div>
+
             </div>
-
         </div>
 
         <div class="row mt-5">
             <div class="col">
-                <img src="{% static 'core/img/sesiones-clinicas.jpg' %}" class="img-thumbnail mt-2" alt="...">
+                <img src="{% static 'core/img/sesiones-clinicas.jpg' %}" class="img-thumbnail mt-2" alt="tomografia">
             </div>
             <div class="col">
-                <img src="{% static 'core/img/medicos2.jpg' %}" class="img-thumbnail mt-2" alt="...">
+                <img src="{% static 'core/img/medicos2.jpg' %}" class="img-thumbnail mt-2" alt="equipo medico">
             </div>
             <div class="col">
-                <img src="{% static 'core/img/medicos3.jpg' %}" class="img-thumbnail mt-2" alt="...">
+                <img src="{% static 'core/img/medicos3.jpg' %}" class="img-thumbnail mt-2" alt="doctor-paciente">
             </div>
             <div class="col">
-                <img src="{% static 'core/img/sala.jpg' %}" class="img-thumbnail " alt="...">
+                <img src="{% static 'core/img/sala.jpg' %}" class="img-thumbnail " alt="comoda sala de espera">
             </div>
         </div>
 
@@ -88,13 +76,14 @@
             <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img src="{% static 'core/img/quienes_somos1.jpg' %}" class="d-block w-100" alt="...">
+                        <img src="{% static 'core/img/quienes_somos1.jpg' %}" class="d-block w-100" alt="grupo medico">
                     </div>
                     <div class="carousel-item">
-                        <img src="{% static 'core/img/quienes_somos2.jpg' %}" class="d-block w-100" alt="...">
+                        <img src="{% static 'core/img/quienes_somos2.jpg' %}" class="d-block w-100"
+                            alt="medico y paciente">
                     </div>
                     <div class="carousel-item">
-                        <img src="{% static 'core/img/medicos2.jpg' %}" class="d-block w-100" alt="...">
+                        <img src="{% static 'core/img/medicos2.jpg' %}" class="d-block w-100" alt="equipo medico">
                     </div>
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
@@ -111,61 +100,65 @@
             <!-- <img class="card-img-top" src="" alt="Card image cap"> -->
             <div class="card-body">
                 <h5 class="card-title" id="quienes_somos" style="scroll-margin-top: 60ex">Quienes Somos</h5>
-                <p class="card-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptas temporibus
-                    reprehenderit veniam asperiores, sequi explicabo laboriosam eaque nisi earum! Odio sequi, sit rerum
-                    molestiae sed reiciendis aliquam necessitatibus tenetur maxime?</p>
+                <p class="card-text">Somos una institución de salud, que provee atención médica integral a través de una
+                    constante innovación tecnológica y de un equipo multidisciplinario de profesionales de excelencia.
+                    Contamos con categoría nivel IV en complejidad</p>
             </div>
         </div>
 
+        <div class="card mb-3 mt-5">
 
-        <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="{% static 'core/img/nuestros_servicios1.jpg' %}" class="d-block w-100" alt="...">
+            <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="{% static 'core/img/nuestros_servicios1.jpg' %}" class="d-block w-100"
+                            alt="servicio de ortodoncia">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{% static 'core/img/nuestros_servicios2.jpg' %}" class="d-block w-100"
+                            alt="camas de internacion ">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{% static 'core/img/nuestros_servicios3.jpg' %}" class="d-block w-100"
+                            alt="procedimiento de cirujia ">
+                    </div>
                 </div>
-                <div class="carousel-item">
-                    <img src="{% static 'core/img/nuestros_servicios2.jpg' %}" class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item">
-                    <img src="{% static 'core/img/nuestros_servicios3.jpg' %}" class="d-block w-100" alt="...">
-                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
-                data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
-                data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
+            <!-- <img class="card-img-top" src="" alt="Card image cap"> -->
+            <div class="card-body">
+                <h5 class="card-title" id="nuestros_servicios" style="scroll-margin-top: 60ex">Nuestros Servicios</h5>
+                <p class="card-text">Contamos una amplia cartilla de servicios médicos y profesionales. Nuestro equipo
+                    médico trabaja, por encima de todo, para brindar un eficiente servicio de atención médica.</p>
+            </div>
         </div>
-        <!-- <img class="card-img-top" src="" alt="Card image cap"> -->
-        <div class="card-body">
-            <h5 class="card-title" id="nuestros_servicios" style="scroll-margin-top: 60ex">Nuestros Servicios</h5>
-            <p class="card-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptas temporibus
-                reprehenderit veniam asperiores, sequi explicabo laboriosam eaque nisi earum! Odio sequi, sit rerum
-                molestiae sed reiciendis aliquam necessitatibus tenetur maxime?</p>
-        </div>
-    </div>
+    
 
 
     <div class="container mt-5">
         <div class="row">
-            <div class="col">
+            <div class="col text-center">
                 <iframe
                     src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d26266.32226845127!2d-58.47286947894409!3d-34.622103939563246!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1smaps!5e0!3m2!1ses!2sar!4v1696825144378!5m2!1ses!2sar"
                     width="350" height="300" style="border:0;" allowfullscreen="" loading="lazy"
                     referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
-            <div class="col">
+            <div class="col text-center">
                 <iframe
                     src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d26266.32226845127!2d-58.47286947894409!3d-34.622103939563246!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1smaps!5e0!3m2!1ses!2sar!4v1696825144378!5m2!1ses!2sar"
                     width="350" height="300" style="border:0;" allowfullscreen="" loading="lazy"
                     referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
-            <div class="col">
+            <div class="col text-center ">
                 <iframe
                     src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d26266.32226845127!2d-58.47286947894409!3d-34.622103939563246!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1smaps!5e0!3m2!1ses!2sar!4v1696825144378!5m2!1ses!2sar"
                     width="350" height="300" style="border:0;" allowfullscreen="" loading="lazy"
@@ -178,9 +171,9 @@
         <div class="card-body">
             <h5 class="card-title" id="nuestras_sucursales" style="scroll-margin-top: 50ex;">Nuestras Sucursales</h5>
             <p class="card-text">
-            <h6>FLORES ...</h6>
-            <h6>CABALLITO..</h6>
-            <h6>ALMAGRO...</h6>
+            <h6>FLORES - Membrillar 555 - Piso 5 B</h6>
+            <h6>CABALLITO - Acoyte 1020 - Planta Baja 8</h6>
+            <h6>ALMAGRO - Gascon 245 - Piso 9 C</h6>
             </p>
 
         </div>
