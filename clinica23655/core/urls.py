@@ -15,7 +15,7 @@ urlpatterns = [
     path('datos_personales_medico/<str:matricula>', datos_personales_medico, name='datos_personales_medico'),
     path('turnos/',TurnosListView.as_view(), name='turnos'),
     path('pacientes/',PacienteListView.as_view(), name='pacientes'),
-    
+    path('buscador/', BlogSearchView.as_view(), name = 'buscador'),
     path('alta_turno/',AltaTurno.as_view(), name='alta_turno'),
     path('alta_medico', AltaDoctor.as_view(), name = 'alta_medico'),
     path('alta_paciente', AltaPaciente.as_view(), name='alta_paciente'),

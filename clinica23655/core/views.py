@@ -1,3 +1,5 @@
+from typing import Any
+from django.db.models.query import QuerySet
 from django.http import HttpResponse
 import datetime
 from django.contrib import messages
@@ -171,7 +173,19 @@ class TurnosListView(LoginRequiredMixin, ListView):
     context_object_name = 'turnos'
     template_name = 'core/turnos.html'
     
+class BlogSearchView(ListView):
+    model = Turno
+    template_name = 'core/turnos.html'
+    context_object_name = 'turnos'
 
+    def get_queryset(self):
+        nombre = self.request.GET.get('buscador')
+        object_list = Turno.objects.filter(doctor__nombre__icontains = nombre) 
+        if object_list:
+            return object_list
+        else:
+            object_list = Turno.objects.filter(Paciente__nombre__icontains = nombre) 
+            return object_list
 
 class AltaTurno(CreateView):
     model = Turno
