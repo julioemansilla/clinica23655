@@ -10,7 +10,7 @@ from django.db.models import Q
 
 from django.shortcuts import render , redirect
 from django.urls    import reverse
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.mixins import LoginRequiredMixin , PermissionRequiredMixin
 
 from core.models import Doctor, Especialidad, Paciente, Turno
 from .forms import ContactoForms, AltaDoctor, AltaTurno, AltaPaciente, AltaEspecialidad
@@ -155,18 +155,22 @@ class DoctorListView(LoginRequiredMixin, ListView):
     model = Doctor
     context_object_name = 'medicos'
     template_name = 'core/medicos.html'
+    
 
 
 
-class AltaDoctor(CreateView):
+class AltaDoctor(PermissionRequiredMixin,CreateView):
     model = Doctor
     template_name = 'core/alta_medico.html'
     form_class = AltaDoctor
+    permission_required = 'core.add_doctor'
+    
 
 class EspecialidadesListView(ListView):
     model = Especialidad
     context_object_name = 'especialidades'
     template_name = 'core/especialidades.html'
+    
     
 class TurnosListView(LoginRequiredMixin, ListView):
     model = Turno
@@ -187,24 +191,29 @@ class BlogSearchView(ListView):
             object_list = Turno.objects.filter(Paciente__nombre__icontains = nombre) 
             return object_list
 
-class AltaTurno(CreateView):
+class AltaTurno(PermissionRequiredMixin,CreateView):
     model = Turno
     template_name = 'core/alta_turno.html'
     form_class = AltaTurno
     success_url = reverse_lazy('turnos')
+    permission_required = 'core.add_turno'
 
 
 class PacienteListView(LoginRequiredMixin, ListView):
     model = Paciente
     context_object_name = 'pacientes'
     template_name = 'core/pacientes.html'
+    
 
-class AltaPaciente(CreateView):
+class AltaPaciente(PermissionRequiredMixin,CreateView):
     model = Paciente
     template_name = 'core/alta_paciente.html'
     form_class = AltaPaciente
+    permission_required = 'core.add_paciente'
+    
 
-class AltaEspecialidad(LoginRequiredMixin,CreateView):
+class AltaEspecialidad(PermissionRequiredMixin,LoginRequiredMixin,CreateView):
     model = Especialidad
     template_name = 'core/alta_especialidad.html'
     form_class = AltaEspecialidad
+    permission_required = 'core.add_especialidad'
