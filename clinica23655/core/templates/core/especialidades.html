@@ -11,9 +11,10 @@
 
 {% block main %}
 {% if user.is_authenticated %}
-<div class="alta_medico">
-    <ul>
-        <li><h3><a href="{% url 'alta_especialidad' %}">ALTA ESPECIALIDAD</a></h3></li>
+<div class="text-center">
+    <ul >
+        <li>
+            <h3><a href="{% url 'alta_especialidad' %}" class="text-decoration-none">ALTA ESPECIALIDAD</a></h3></li>
     </ul>
 </div>  
 {% endif %}
