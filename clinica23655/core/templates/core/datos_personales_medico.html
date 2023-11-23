@@ -3,20 +3,24 @@
 {% block section_title %} Medicos {% endblock %}
 {% block main %}    
 <div class="content">
-    <div class="">
-        <p>          
-            <strong>{{medico.nombre}} {{medico.apellido}}</strong>
+    <div class="card-body">
+        {% for doctor in medico  %}
+        <p class="card-title">               
+            <strong>{{doctor.nombre|upper}} {{doctor.apellido|upper}}</strong>
+        </p>
+        <p class="card-text">                    
+            Especialidad: <strong>{{doctor.doctor_especialidades}}</strong>
+                <ul>
+                    {% for especialidad in doctor.especialidades.all %}
+                        <li>{{ especialidad.nombre }}</li>
+                    {% endfor %}
+                </ul>
         </p>
         <p class="card-text">
-            Rubro: <strong>{{medico.rubro}}</strong>
+            Matricula: <strong>{{doctor.matricula}}</strong>
         </p>
-        <p class="card-text">
-            Matricula: <strong>{{medico.matricula}}</strong>
-        </p>
-        <hr>
-        <p class="text-start fw-bold">
-            Sobre El/la Dr/a. {{medico.nombre}}
-        </p>
+        {% endfor %}
+
     </div>
 </div> 
 {% endblock %}

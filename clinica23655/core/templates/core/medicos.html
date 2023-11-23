@@ -47,7 +47,7 @@
                     Matricula: <strong>{{medico.matricula}}</strong>
                 </p>
             </div>
-            <a href="#" class="text-center"> <strong>+</strong>info </a>
+            <a href="{% url 'datos_personales_medico' medico.id %}" class="text-center"> <strong>+</strong>info </a>
         </div>
         {% endfor %}
     {% endif %}
