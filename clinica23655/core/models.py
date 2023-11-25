@@ -47,7 +47,7 @@ class Doctor(Persona):
         
     
     def __str__(self):
-        return f'{self.nombre}, {self.apellido}, {self.edad}'
+        return f'{self.nombre}, {self.apellido}, {self.edad}, {self.especialidades}'
 
 class Paciente(Persona):
     historia_clinica = models.TextField()

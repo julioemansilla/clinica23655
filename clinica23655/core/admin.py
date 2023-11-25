@@ -19,7 +19,8 @@ class PacienteAdmin(admin.ModelAdmin):
 class TurnoAdmin(admin.ModelAdmin):
     list_display = ('id','doctor', 'Paciente', 'hora','fecha','especialidad')
     ordering = ('id',)
-    list_editable = ('especialidad',)
+    
+    list_filter = ('doctor','Paciente')
     
     
 
