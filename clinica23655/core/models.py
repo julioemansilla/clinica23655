@@ -1,6 +1,12 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.core.exceptions import ValidationError
 
+
+# se verifica que el doctor sea mayor de 18.
+def validar_edad (edad):
+    if edad < 18 :
+        raise ValidationError ('El/La Doctor/ar no puede tener menos de 18 años.')
 
 class Persona2(User):
     class Metal:
@@ -9,7 +15,8 @@ class Persona2(User):
 class Persona(models.Model):
     nombre = models.CharField(max_length=100)
     apellido = models.CharField(max_length=100)
-    dni = models.IntegerField(unique=True)
+    dni = models.IntegerField(unique=True, null=False)
+    edad = models.IntegerField(null = True, validators=[validar_edad])
     contacto = models.CharField(max_length=10)
     email = models.EmailField(max_length=254)
     fecha_alta = models.DateTimeField(auto_now_add=True)
@@ -32,12 +39,15 @@ class Especialidad(models.Model):
 class Doctor(Persona):
     matricula = models.CharField(max_length=50,unique=True)
     especialidades = models.ManyToManyField(Especialidad)
-
+ 
     def get_absolute_url(self):
         return 'medicos'
     
+        
+        
+    
     def __str__(self):
-        return f'{self.nombre}, {self.apellido}'
+        return f'{self.nombre}, {self.apellido}, {self.edad}'
 
 class Paciente(Persona):
     historia_clinica = models.TextField()

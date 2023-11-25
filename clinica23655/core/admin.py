@@ -3,9 +3,9 @@ from core.models import *
 
 
 class DoctorAdmin(admin.ModelAdmin):
-    list_display = ('id','nombre', 'apellido', 'matricula')
+    list_display = ('id','nombre', 'apellido', 'edad','matricula')
     ordering = ('id',)
-    list_editable = ('nombre' , 'apellido')
+    list_editable = ('nombre' , 'apellido','edad')
     list_display_links = ['matricula']
     search_fields = ['apellido', 'nombre']
 
