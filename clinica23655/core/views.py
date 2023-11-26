@@ -53,7 +53,7 @@ class BlogSearchView(ListView):
     model = Turno
     template_name = 'core/turnos.html'
     context_object_name = 'turnos'
-
+    # FILTRA LA CONSULTA DEL PARAMETRO NOMBRE 
     def get_queryset(self):
         nombre = self.request.GET.get('buscador')
         object_list = Turno.objects.filter(doctor__nombre__icontains = nombre) 
