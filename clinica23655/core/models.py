@@ -29,12 +29,12 @@ class Especialidad(models.Model):
     nombre = models.CharField(max_length=70,null=True)
     descripcion = models.CharField(max_length=150)
 
+    def get_absolute_url(self):
+        return 'especialidades'
+    
     def __str__(self):
         return self.nombre
     
-    
-    def get_absolute_url(self):
-        return 'especialidades'
 
 class Doctor(Persona):
     matricula = models.CharField(max_length=50,unique=True)
@@ -43,11 +43,12 @@ class Doctor(Persona):
     def get_absolute_url(self):
         return 'medicos'
     
+    def __str__(self):
+        return f'{self.nombre}, {self.apellido}'
+        
         
         
     
-    def __str__(self):
-        return f'{self.nombre}, {self.apellido}, {self.edad}, {self.especialidades}'
 
 class Paciente(Persona):
     historia_clinica = models.TextField()
