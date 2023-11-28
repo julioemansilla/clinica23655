@@ -23,7 +23,21 @@ class AltaDoctor(forms.ModelForm):
     class Meta:
         model = Doctor
         fields = "__all__"
+        widgets = {
+            "matricula": forms.TextInput(attrs={"id":"matricula","minlenght":"6","class":"form-control"})
+        }
 
+    def clean_edad(self):
+        if self.cleaned_data['edad'] < 18:
+            raise ValidationError('El doctor/a ingresado no puede tener menos de 18 años')
+        
+        return self.cleaned_data['edad']
+    
+    def clean_matricula(self):
+        if len(self.cleaned_data['matricula']) < 6:
+            raise ValidationError('La matricula debe contener 6 caracteres o más')
+        return self.cleaned_data['matricula']
+            
 class AltaPaciente(forms.ModelForm):
     class Meta: 
         model = Paciente 
