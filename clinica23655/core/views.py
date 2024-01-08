@@ -11,6 +11,10 @@ from django.views.generic.base import TemplateView
 from django.views.generic.list import ListView
 from django.views.generic.edit import CreateView
 
+from rest_framework import viewsets
+from rest_framework import permissions
+from core.serializers  import DoctorSerializer
+
 
 def index2(request,nombre_usuario):
     context ={
@@ -95,3 +99,8 @@ def datos_personales_medico(request,pk):
     medico = Doctor.objects.filter(id=pk)
 
     return render(request,'core/datos_personales_medico.html',{'medico':medico})
+
+
+class DoctorViewSet(viewsets.ModelViewSet):
+    queryset = Doctor.objects.all()
+    serializer_class = DoctorSerializer
